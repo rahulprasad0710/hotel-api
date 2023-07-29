@@ -1,0 +1,11 @@
+[2023-07-28 03:59:02.262 PM] [31merror[39m: 	[31mDB NOT CONNECTED connect ECONNREFUSED ::1:27017[39m
+[2023-07-28 04:01:01.541 PM] [31merror[39m: 	[31mDB NOT CONNECTED connect ECONNREFUSED ::1:27017[39m
+[2023-07-28 04:01:44.936 PM] [31merror[39m: 	[31mDB NOT CONNECTED connect ECONNREFUSED ::1:27017[39m
+[2023-07-28 04:02:20.389 PM] [31merror[39m: 	[31mDB NOT CONNECTED connect ECONNREFUSED ::1:27017[39m
+[2023-07-28 04:06:09.542 PM] [31merror[39m: 	[31mDB NOT CONNECTED connect ECONNREFUSED ::1:27017[39m
+[2023-07-29 11:50:51.012 AM] [31merror[39m: 	[31mTypeError:-500: hotel.save is not a function at at Object.addHotel (file:///D:/2078/code_2023/lama-dev-hotel-booking-app/backend/src/services/hotel.service.js:25:35)[39m
+[2023-07-29 11:51:39.466 AM] [31merror[39m: 	[31mTypeError:-500: Hotel.save is not a function at at Object.addHotel (file:///D:/2078/code_2023/lama-dev-hotel-booking-app/backend/src/services/hotel.service.js:25:35)[39m
+[2023-07-29 11:53:24.835 AM] [31merror[39m: 	[31mTypeError:-500: newHotel.save is not a function at at Object.addHotel (file:///D:/2078/code_2023/lama-dev-hotel-booking-app/backend/src/services/hotel.service.js:25:38)[39m
+[2023-07-29 11:54:44.155 AM] [31merror[39m: 	[31mValidationError:-422: Hotel validation failed: address: Path `address` is required. at at Document.invalidate (D:\2078\code_2023\lama-dev-hotel-booking-app\backend\node_modules\mongoose\lib\document.js:3153:32)[39m
+[2023-07-29 11:55:02.988 AM] [31merror[39m: 	[31mTypeError:-500: Class constructor AppError cannot be invoked without 'new' at at addHotel (file:///D:/2078/code_2023/lama-dev-hotel-booking-app/backend/src/controllers/hotel.controller.js:17:21)[39m
+[2023-07-29 11:56:00.626 AM] [31merror[39m: 	[31mAppError:-500: something Went wrong. at at addHotel (file:///D:/2078/code_2023/lama-dev-hotel-booking-app/backend/src/controllers/hotel.controller.js:17:21)[39m
