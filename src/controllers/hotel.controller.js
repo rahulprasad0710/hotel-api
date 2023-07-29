@@ -60,7 +60,6 @@ const getHotelBySlug = async (req, res) => {
 
     if (cachedResponse) {
         const data = JSON.parse(cachedResponse);
-        console.log("from cache", data);
         return res.status(200).json({
             success: true,
             data,

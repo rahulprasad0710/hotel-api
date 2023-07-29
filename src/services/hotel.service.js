@@ -61,8 +61,7 @@ const getHotels = async (
     const total = await Hotel.countDocuments(filter);
     const totalPages = Math.ceil(total / perPage);
     // pagination ends here
-    console.log({ filter, sort, skip, perPage });
-    const hotels = await Hotel.find(filter)
+    const hotelsData = await Hotel.find(filter)
         .sort(sort)
         .skip(skip)
         .limit(perPage)
@@ -71,7 +70,7 @@ const getHotels = async (
         .populate("logo");
 
     return {
-        hotels,
+        hotels: hotelsData,
         filters: {
             searchTerm,
             type,
@@ -88,13 +87,48 @@ const getHotels = async (
 };
 
 const getHotelById = async (id) => {
-    const data = Hotel.findById(id);
+    const data = Hotel.findById(id)
+        .populate("thumbnil")
+        .populate("logo")
+        .populate("images")
+        .populate("address")
+        .populate("rooms");
     return data;
 };
 
 const getHotelsByslug = async (slug) => {
-    const data = Hotel.findOne({ slug });
+    const data = Hotel.findOne({ slug })
+        .populate("thumbnil")
+        .populate("logo")
+        .populate("images")
+        .populate("address")
+        .populate("rooms");
     return data;
+};
+
+const updateHotel = async (id, hotel) => {
+    const data = {
+        title: hotel.title,
+        websiteUrl: hotel.websiteUrl,
+        description: hotel.description,
+        type: hotel.type,
+        priceRange: {
+            lowestPrice: hotel.lowestPrice,
+            highestPrice: hotel.highestPrice,
+        },
+        thumbnil: hotel.thumbnilId,
+        logo: hotel.logoId,
+        images: hotel.imageIdArray,
+        tags: hotel.tags,
+        featuredIn: hotel.featuredIn,
+    };
+
+    const updatedData = Hotel.findByIdAndUpdate(id, data, {
+        new: true,
+        runValidators: true,
+    }).populate("thumbnil logo images address rooms");
+
+    return updatedData;
 };
 
 export default {
@@ -102,4 +136,5 @@ export default {
     getHotels,
     getHotelById,
     getHotelsByslug,
+    updateHotel,
 };
