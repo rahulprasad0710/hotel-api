@@ -41,7 +41,7 @@ export class HotelFilter {
 
 export class Sorting {
     constructor(sortBy, sortOrder) {
-        this.sortBy = sortBy ?? "name";
+        this.sortBy = sortBy ?? "relavance";
         this.sortOrder = sortOrder === "DEC" ? -1 : 1;
     }
 }
